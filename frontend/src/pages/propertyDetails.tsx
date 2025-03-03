@@ -11,6 +11,9 @@ export default function PropertyDetailsPage() {
   const [submitted, setSubmitted] = useState<{
     [k: string]: FormDataEntryValue;
   } | null>(null);
+
+  console.log(submitted);
+
   return (
     <DefaultLayout>
       <section className="dark:bg-[#0a0b0d] bg-[#FFF7F0] dark:text-white h-auto py-10 relative md:px-12 px-4">

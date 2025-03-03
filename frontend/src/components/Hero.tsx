@@ -119,6 +119,8 @@ export const Hero: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  console.log(submitted);
+
   return (
     <>
       <section
@@ -213,7 +215,7 @@ export const Hero: React.FC = () => {
         onOpenChange={onOpenChange}
       >
         <ModalContent>
-          {(onClose) => (
+          {() => (
             <>
               <ModalHeader className="flex flex-col gap-1">
                 <h2 className="text-2xl font-bold">Find Your Dream Home</h2>
