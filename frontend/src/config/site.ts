@@ -31,8 +31,12 @@ export const siteConfig = {
       href: "/about",
     },
     {
+      label: "Properties",
+      href: "/listing",
+    },
+    {
       label: "Contact",
-      href: "/contact",
+      href: "/",
     },
     {
       label: "Logout",
