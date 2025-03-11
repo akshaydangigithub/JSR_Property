@@ -71,23 +71,6 @@ export default function PropertyDetailsPage() {
               your web page.So, the Elementor slider would be a great tool to
               work with when building a WordPress site.
             </p>
-
-            <h1 className="font-bold text-2xl mt-10">Local Information</h1>
-
-            <div className="h-64 md:h-96 overflow-hidden w-full mt-5 border rounded-xl">
-              {/* map */}
-
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29316.16553772633!2d77.38143001197616!3d23.296859599231535!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x397c686203754fd5%3A0x99c1d3e0a6812e47!2sKarond%2C%20Bhopal%2C%20Madhya%20Pradesh!5e0!3m2!1sen!2sin!4v1741020610987!5m2!1sen!2sin"
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                className="w-full h-full"
-                referrerPolicy="no-referrer-when-downgrade"
-              />
-            </div>
           </div>
 
           <div className="rounded-xl h-fit col-span-1 px-6 py-6 overflow-hidden bg-white dark:bg-[#1A1B1E] border">

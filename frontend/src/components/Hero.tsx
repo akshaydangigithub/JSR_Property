@@ -12,6 +12,8 @@ import {
   Input,
   Select,
   SelectItem,
+  Textarea,
+  Checkbox,
 } from "@heroui/react";
 
 const propertyTypes = [
@@ -68,6 +70,10 @@ export const Hero: React.FC = () => {
   const [submitted, setSubmitted] = React.useState<{
     [k: string]: FormDataEntryValue;
   } | null>(null);
+  const [isOpen2, setIsOpen2] = useState(false);
+  const [submitted2, setSubmitted2] = React.useState<{
+    [k: string]: FormDataEntryValue;
+  } | null>(null);
 
   const mainControls = useAnimation();
   const paragraphControls = useAnimation();
@@ -119,7 +125,7 @@ export const Hero: React.FC = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  console.log(submitted);
+  console.log(submitted, submitted2);
 
   return (
     <>
@@ -199,6 +205,7 @@ export const Hero: React.FC = () => {
                 radius="full"
                 variant="bordered"
                 className="border-[#ffceb2] dark:border-[#FACC15] text-[#f07e3c] dark:text-[#FACC15]"
+                onPress={() => setIsOpen2(true)}
               >
                 Become a Partner
                 <FaArrowRight className="h-4 w-4 text-[#f07e3c] dark:text-[#FACC15]" />
@@ -210,7 +217,7 @@ export const Hero: React.FC = () => {
 
       <Modal
         isOpen={isOpen}
-        placement="center"
+        placement="auto"
         size="xl"
         onOpenChange={onOpenChange}
       >
@@ -282,6 +289,20 @@ export const Hero: React.FC = () => {
                     ))}
                   </Select>
 
+                  <Select
+                    isRequired
+                    disableSelectorIconRotation
+                    className="max-w-xl"
+                    name="type2"
+                    label="Select"
+                    labelPlacement="outside"
+                    placeholder="Select an option"
+                    selectorIcon={<SelectorIcon />}
+                  >
+                    <SelectItem>For Buy</SelectItem>
+                    <SelectItem>For Rent</SelectItem>
+                  </Select>
+
                   <Button
                     type="submit"
                     className="mt-4 w-full bg-black text-white dark:bg-white dark:text-black"
@@ -292,6 +313,113 @@ export const Hero: React.FC = () => {
               </ModalBody>
             </>
           )}
+        </ModalContent>
+      </Modal>
+
+      <Modal
+        isOpen={isOpen2}
+        placement="auto"
+        size="full"
+        onOpenChange={() => setIsOpen2(false)}
+      >
+        <ModalContent>
+          <div className="h-full w-full flex flex-col items-center justify-center md:px-0 px-4">
+            <h1 className="font-semibold text-center text-2xl dark:text-white">
+              To become a partner, please fill out the form below
+            </h1>
+
+            <Form
+              className="w-full max-w-5xl mt-5"
+              onReset={() => setSubmitted2(null)}
+              onSubmit={(e) => {
+                e.preventDefault();
+                let data = Object.fromEntries(new FormData(e.currentTarget));
+
+                console.log(data);
+
+                setSubmitted2(data);
+              }}
+            >
+              <div className="w-full grid grid-cols-2 gap-4">
+                <Input
+                  isRequired
+                  label="Full Name"
+                  name="name"
+                  type="text"
+                  errorMessage="Full name is required"
+                />
+                <Input
+                  isRequired
+                  label="Email Address"
+                  name="email"
+                  type="email"
+                  errorMessage="Email address is required"
+                />
+                <Input
+                  isRequired
+                  label="Phone Number"
+                  name="phone"
+                  type="number"
+                  errorMessage="Phone number is required"
+                />
+                <Input
+                  isRequired
+                  label="Company Name"
+                  name="company"
+                  type="text"
+                  errorMessage="Company name is required"
+                />{" "}
+                <Input
+                  isRequired
+                  label="City"
+                  name="city"
+                  type="text"
+                  errorMessage="City is required"
+                />
+                <Input
+                  isRequired
+                  label="Country"
+                  name="country"
+                  type="text"
+                  errorMessage="Country is required"
+                />
+              </div>
+              <div className="w-full grid mt-2 grid-cols-1 gap-4">
+                <Textarea
+                  isRequired
+                  label="About your company"
+                  name="message"
+                  errorMessage="Message is required"
+                />{" "}
+                <Input
+                  isRequired
+                  label="Your Image"
+                  name="image"
+                  type="file"
+                  errorMessage="Image is required"
+                />
+              </div>
+
+              <Checkbox
+                className="mt-3"
+                color="warning"
+                defaultSelected={false}
+                isRequired
+              >
+                I agree to the{" "}
+                <span className="text-blue-500 underline">
+                  terms and conditions
+                </span>
+              </Checkbox>
+
+              <Button
+                type="submit"
+                className="mt-4 w-full bg-black text-white dark:bg-white dark:text-black"
+              >
+                Submit
+              </Button>
+            </Form>
+          </div>
         </ModalContent>
       </Modal>
     </>

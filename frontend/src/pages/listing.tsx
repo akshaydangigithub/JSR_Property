@@ -13,6 +13,7 @@ const list = [
     bed: "3",
     bath: "2",
     area: "1200 sqft",
+    type: "Sell",
   },
   {
     title: "Orange",
@@ -22,6 +23,7 @@ const list = [
     bed: "3",
     bath: "2",
     area: "1200 sqft",
+    type: "Rent",
   },
   {
     title: "Orange",
@@ -31,6 +33,7 @@ const list = [
     bed: "3",
     bath: "2",
     area: "1200 sqft",
+    type: "Rent",
   },
   {
     title: "Orange",
@@ -40,6 +43,7 @@ const list = [
     bed: "3",
     bath: "2",
     area: "1200 sqft",
+    type: "Rent",
   },
   {
     title: "Orange",
@@ -49,6 +53,7 @@ const list = [
     bed: "3",
     bath: "2",
     area: "1200 sqft",
+    type: "Sell",
   },
   {
     title: "Orange",
@@ -58,33 +63,7 @@ const list = [
     bed: "3",
     bath: "2",
     area: "1200 sqft",
-  },
-  {
-    title: "Orange",
-    img: Img,
-    price: "$649,900",
-    location: "New Market, Bhopal",
-    bed: "3",
-    bath: "2",
-    area: "1200 sqft",
-  },
-  {
-    title: "Orange",
-    img: Img,
-    price: "$649,900",
-    location: "New Market, Bhopal",
-    bed: "3",
-    bath: "2",
-    area: "1200 sqft",
-  },
-  {
-    title: "Orange",
-    img: Img,
-    price: "$649,900",
-    location: "New Market, Bhopal",
-    bed: "3",
-    bath: "2",
-    area: "1200 sqft",
+    type: "Sell",
   },
 ];
 

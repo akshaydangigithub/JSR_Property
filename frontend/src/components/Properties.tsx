@@ -15,6 +15,7 @@ const list = [
     bed: "3",
     bath: "2",
     area: "1200 sqft",
+    type: "Sell",
   },
   {
     title: "Orange",
@@ -24,6 +25,7 @@ const list = [
     bed: "3",
     bath: "2",
     area: "1200 sqft",
+    type: "Rent",
   },
   {
     title: "Orange",
@@ -33,6 +35,7 @@ const list = [
     bed: "3",
     bath: "2",
     area: "1200 sqft",
+    type: "Rent",
   },
   {
     title: "Orange",
@@ -42,6 +45,7 @@ const list = [
     bed: "3",
     bath: "2",
     area: "1200 sqft",
+    type: "Rent",
   },
   {
     title: "Orange",
@@ -51,6 +55,7 @@ const list = [
     bed: "3",
     bath: "2",
     area: "1200 sqft",
+    type: "Sell",
   },
   {
     title: "Orange",
@@ -60,6 +65,7 @@ const list = [
     bed: "3",
     bath: "2",
     area: "1200 sqft",
+    type: "Sell",
   },
 ];
 
@@ -77,8 +83,8 @@ export const Properties: React.FC = () => {
         {["All", "House", "Apartment", "Condo", "Villa"].map(
           (category, index) => (
             <span
-              data-aos="fade-up"
-              data-aos-delay={index * 100}
+              // data-aos="fade-up"
+              // data-aos-delay={index * 100}
               onClick={() => setActiveProperty(category)}
               key={index}
               className={`border-2 cursor-pointer font-semibold border-[#ffceb2] dark:border-[#FACC15] py-1.5 px-5 rounded-xl ${
@@ -137,6 +143,10 @@ export const DynamicCard: React.FC<{ item: any; index: number }> = ({
         src={item.img}
         width="100%"
       />
+
+      <div className="absolute z-10 bg-[#FFE0CE] py-1 px-2.5 text-sm rounded-xl font-semibold top-2 right-2">
+        {item.type}
+      </div>
     </CardBody>
     <CardFooter className="flex flex-col justify-start items-start px-4 py-6">
       <div className="flex items-center gap-2">

@@ -18,7 +18,7 @@ export const siteConfig = {
     },
     {
       label: "Contact",
-      href: "/",
+      href: "/contact",
     },
   ],
   navMenuItems: [
@@ -36,7 +36,7 @@ export const siteConfig = {
     },
     {
       label: "Contact",
-      href: "/",
+      href: "/contact",
     },
     {
       label: "Logout",
@@ -44,3 +44,5 @@ export const siteConfig = {
     },
   ],
 };
+
+

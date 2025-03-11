@@ -82,7 +82,7 @@ export const Navbar = () => {
             // isExternal
             as={Link}
             className="text-sm font-normal text-white bg-black dark:bg-white dark:text-black"
-            href={"/"}
+            href={"/login"}
             variant="flat"
             // color="warning"
           >
